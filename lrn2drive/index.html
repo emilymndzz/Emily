@@ -12,8 +12,28 @@
         .windshield {
             height: 66%;
             width: 90%;
+            background-color: white;
         }
         
+        .car {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            position: relative;
+        }
+        
+        .steering-wheel {
+            position: absolute;
+            background-color: black;
+            height: 150px;
+            width: 150px;
+            bottom: 50;
+            left: 80;
+            border-radius: 100%;
+        }
         
     </style>
     
@@ -22,11 +42,26 @@
     
     <div class="car">
         <div class="windshield">
-            WINDSHIELDLOL
+            <canvas id="windshield-content">
+            </canvas>
         </div>
         <div class="steering-wheel">
-            STEERING WHEEL
+            
         </div>
         
     </div>
+    
+    <script>
+        console.log('Hello!')
+        var windshieldContainer = document.querySelector('.windshield')
+        var windshieldHeight = windshieldContainer.getBoundingClientRect().height;
+        var windshieldWidth = windshieldContainer.getBoundingClientRect().width;
+        
+        var windshieldContentCanvas = document.getElementById('windshield-content');
+        var windshieldContext = windshieldContentCanvas.getContext("2d");
+        windshieldContext.canvas.height = windshieldHeight;
+        windshieldContext.canvas.width = windshieldWidth;
+        
+        
+    </script>
 </body>
