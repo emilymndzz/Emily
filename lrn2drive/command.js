@@ -1,4 +1,4 @@
-[
+var events = [
   {
     instruction: "Merge to the left lane.",
     hint: "Look over your shoulder to make sure no cars are in your blind spot.  Turn on your turn signal and steer to the left."
@@ -42,3 +42,33 @@
 
 
 ]
+
+console.log('Hello')
+
+function randomNumber(start, end) {
+    return Math.floor(Math.random() * end) + start;
+}
+
+function showEvent() {
+    // Grab the first event
+    var leftTurn = events[randomNumber(0,9)]
+
+    // Put the event instructions in one box
+    var instructionsBox = document.querySelector('.instruction')
+
+    var hintBox = document.querySelector('.hint')
+
+        
+    
+    instructionsBox.innerHTML = leftTurn.instruction
+    
+    // Put the event hint in another box
+    hintBox.innerHTML = leftTurn.hint
+    
+    // Unhide the boxes
+
+    instructionsBox.classList.remove('hidden')
+    hintBox.classList.remove('hidden')
+}
+
+setTimeout(showEvent,randomNumber(2000,5000))

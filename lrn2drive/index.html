@@ -1,16 +1,14 @@
 <head>
-
 </head>
 
 <body>
     <style>
         body {
-            color: white;
             background-color: darkred;
         }
         
         .windshield {
-            height: 66%;
+            height: 64%;
             width: 90%;
             background-color: white;
         }
@@ -35,6 +33,28 @@
             border-radius: 100%;
         }
         
+        .hidden {
+            opacity: 0;
+        }
+        
+        .instruction, [class=instruction] {
+            position: absolute;
+            background-color: antiquewhite;
+            height: 100px;
+            width: 175px;
+            bottom: 30;
+            right: 80;
+        }
+        
+        .hint {
+            position: absolute;
+            height: 100px;
+            width: 175px;
+            background-color: antiquewhite;
+            left: 80;
+            top: 30;
+        }
+            
     </style>
     
     
@@ -46,9 +66,13 @@
             </canvas>
         </div>
         <div class="steering-wheel">
-            
         </div>
+        <div class="instruction hidden">
+        </div>
+        <div class="hint hidden">
         
+        </div>
+    
     </div>
     
     <script>
@@ -65,17 +89,81 @@
         var windshieldContentCanvas = document.getElementById('windshield-content')
         var windshieldContext  = windshieldContentCanvas.getContext("2d")
         windshieldContext.beginPath();
-        windshieldContext.moveTo(275,0);
-        windshieldContext.lineTo(0,300);
+        windshieldContext.moveTo(260,200);
+        windshieldContext.lineTo(0,400);
         windshieldContext.stroke();
         
         var windshieldContentCanvas = document.getElementById('windshield-content')
         var windshieldContext  = windshieldContentCanvas.getContext("2d")
         windshieldContext.beginPath();
-        windshieldContext.moveTo(800,525);
-        windshieldContext.lineTo(315,0);
+        windshieldContext.moveTo(345,200);
+        windshieldContext.lineTo(600,420);
         windshieldContext.stroke();
-    
+        
+        // horizon
+        var windshieldContentCanvas = document.getElementById('windshield-content')
+        var windshieldContext  = windshieldContentCanvas.getContext("2d")
+        windshieldContext.beginPath();
+        windshieldContext.moveTo(0,200);
+        windshieldContext.lineTo(600,200);
+        windshieldContext.stroke();
+        
+        
+        // road
+        var windshieldContextCanvas = document.getElementById('windshield-content')
+        var windshieldContext =
+        windshieldContentCanvas.getContext("2d")
+        windshieldContext.beginPath();
+        windshieldContext.moveTo(260,200);
+        windshieldContext.lineTo(345,200);
+        windshieldContext.lineTo(600,400);
+        windshieldContext.lineTo(0,400);
+        windshieldContext.lineTo(260,200);
+        windshieldContext.closePath();
+        windshieldContext.fillStyle = 'grey';
+        windshieldContext.fill();
+        
+        
+        var windshieldContextCanvas = document.getElementById('windshield-content')
+        var windshieldContext
+        windshieldContentCanvas.getContext("2d")
+        windshieldContext.beginPath();
+        windshieldContext.moveTo(0,200);
+        windshieldContext.lineTo(260,200);
+        windshieldContext.lineTo(0,400);
+        windshieldContext.lineTo(0,200);
+        windshieldContext.closePath();
+        windshieldContext.fillStyle = 'green';
+        windshieldContext.fill();
+        
+        var windshieldContextCanvas = document.getElementById('windshield-content')
+        var windshieldContext
+        windshieldContentCanvas.getContext("2d")
+        windshieldContext.beginPath();
+        windshieldContext.moveTo(600,200);
+        windshieldContext.lineTo(600,400);
+        windshieldContext.lineTo(345,200);
+        windshieldContext.lineTo(600,200);
+        windshieldContext.closePath();
+        windshieldContext.fillStyle = 'green';
+        windshieldContext.fill();
+        
+        var windshieldContextCanvas = document.getElementById('windshield-content')
+        var windshieldContext =
+        windshieldContentCanvas.getContext("2d")
+        windshieldContext.beginPath();
+        windshieldContext.moveTo(0,0);
+        windshieldContext.lineTo(600,0);
+        windshieldContext.lineTo(600,200);
+        windshieldContext.lineTo(0,200);
+        windshieldContext.lineTo(0,0);
+        windshieldContext.closePath();
+        windshieldContext.fillStyle = 'blue';
+        windshieldContext.fill();
+        
         
     </script>
+    
+    <script src="command.js"><</script>
+
 </body>
